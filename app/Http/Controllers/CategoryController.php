@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Response;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -32,5 +34,31 @@ class CategoryController extends Controller
         return redirect()->back()->with('delete',"Category Deleted Successfully");
 
       }
+
+          public function Edit($id){
+          $product = DB::table('categories')->where('id',$id)->first();
+
+         
+
+          return response::json($product);
+
+        }
+
+        public function categoryupdate(Request $request){
+               $this->validate($request,[
+                'cname'=>'required|string|max:30',
+
+               ]);
+
+               $id=$request->cid;
+             
+               $data['name'] =  $request->cname;
+               
+               //dd($data);
+               $update = DB::table('categories')->where('id',$id)->update($data);
+
+               return redirect()->back()->with("status", "Category updated successfully!");
+
+        }
     
 }

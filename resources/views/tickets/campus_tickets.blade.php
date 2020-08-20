@@ -23,6 +23,7 @@ $selectedcampus = DB::table('campuses')->where('id',$id)->first();
 </div>     
 @else
 <div class="card-body">
+<div class="table-responsive">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -84,6 +85,7 @@ $selectedcampus = DB::table('campuses')->where('id',$id)->first();
   
   </tbody>
 </table>
+</div>
 </div>
 
 {{ $tickets->appends(Request::all())->links() }}

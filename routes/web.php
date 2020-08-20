@@ -43,8 +43,13 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
          Route::post('new-campus','CampusController@create');
          Route::get('delete/campus/{id}','CampusController@delete');
          Route::get('delete/category/{id}','CategoryController@delete');
+         Route::get('edit/category/{id}','CategoryController@Edit');
          Route::get('campus/tickets','TicketsController@campustickets');
-        
+         Route::post('update/category','CategoryController@categoryupdate')->name('update.category');
          Route::post('new-category','CategoryController@create');
+         Route::get('edit/campus/{id}','CampusController@Edit');
+         Route::post('update/campus','CampusController@campusupdate')->name('update.campus');
 
 });
+         
+

@@ -19,7 +19,7 @@
                              
                             <div class=" col-md-6 ">
        
-                            <input type="text" class="form-control login" name="username" placeholder="   ID number or Username..."  data-toggle="tooltip" data-placement="right"  title="Type your ID number or Username" required >
+                            <input type="text" class="form-control login" name="username" placeholder="   ID number or Username..."  required >
 
 
                             
@@ -30,7 +30,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right"><i class="fas fa-lock"></i></i></label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control login" placeholder="   Password..."  data-toggle="tooltip" data-placement="right"  title="Type your password" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control login" placeholder="   Password..."   name="password" required autocomplete="current-password">
 
                               
                             </div>
@@ -71,3 +71,8 @@
        </div>    
 </div>
 @endsection
+<script>
+if ( $(window).width() < 780 ){
+    $('#password').tooltip('destroy');
+}
+</script>

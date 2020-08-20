@@ -80,10 +80,14 @@ line-height: 2.5;
 }
 
 .logo{
-    width:300px;
+    width:200px;
     border-radius:40px;
-;
-   
+}
+
+
+.logosmall{
+    width:100px;
+    border-radius:40px;
 }
 
 .login{

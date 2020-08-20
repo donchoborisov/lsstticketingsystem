@@ -15,6 +15,7 @@
 </div>     
 @else
 <div class="card-body">
+<div class="table-responsive">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -66,7 +67,7 @@
         <form action="{{url('admin/close_ticket/'. $ticket->ticket_id)}}" method="POST">@csrf
         <a class="btn" href="{{url('tickets/' . $ticket->ticket_id)}}"  data-toggle="tooltip" data-placement="bottom"  title="Comment on this ticket" ><i class="fa fa-comment" id="comment"></i></a>
      
-          <button type="submit" id="close" class="btn"  data-toggle="tooltip" data-placement="bottom"  title="Close this ticket" ><i class="fa fa-close" ></i>Close</button>
+          <button type="submit" id="close" class="btn"  data-toggle="tooltip" data-placement="bottom"  title="Close this ticket" ><i class="fa fa-close" ></i></button>
 
           </form>
         @endif
@@ -76,6 +77,7 @@
   
   </tbody>
 </table>
+</div>
 </div>
 
  {{$tickets->render()}}

@@ -6,20 +6,41 @@
     <title>Support Ticket</title>
 </head>
 <body>
-<p>
-    {{ $comment->comment }}
+
+@extends('beautymail::templates.widgets')
+
+@section('content')
+
+
+	@include('beautymail::templates.widgets.articleStart')
+    <h4 class="secondary"><strong>LSST Ticketing System</strong></h4>
+    <p>
+    <b>{{ $comment->comment }}</b>
 </p>
  
 ---
-<p>Replied by: {{ $user->name }}</p>
+<p>Replied by: <b>{{ $user->name }}</b></p>
  
-<p>Title: {{ $ticket->title }}</p>
-<p>Ticket ID: {{ $ticket->ticket_id }}</p>
-<p>Status: {{ $ticket->status }}</p>
- 
-<p>
-    You can view the ticket at any time at {{ url('tickets/'. $ticket->ticket_id) }}
-</p>
- 
+<p>Title:<b> {{ ucfirst ($ticket->title) }}</b></p>
+<p>Ticket ID: <b>{{ucfirst($ticket->ticket_id) }}</b></p>
+<p>Status: <b>{{ ucfirst ($ticket->status) }}</b></p>
+	
+
+   @include('beautymail::templates.minty.button', ['text' => 'See ticket', 'link' => ' http://127.0.0.1:8000/tickets/'. $ticket->ticket_id])
+
+	@include('beautymail::templates.widgets.articleEnd')
+
+
+@stop
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
