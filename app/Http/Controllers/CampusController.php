@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Campus;
+use DB;
+use Response;
 
 class CampusController extends Controller
 {
@@ -36,10 +38,31 @@ class CampusController extends Controller
          $campus->delete();
 
          return redirect()->back()->with("delete","Campus deleted successfully");
+      }
+
+      public function Edit($id){
+          
+        $campus = DB::table('campuses')->where('id',$id)->first();
+
+        return response::json($campus);
+
+      }
 
 
+      public function campusupdate(Request $request){
 
-    }
+          $this->validate($request,[
+             'kname'=>'required|string|max:30',
+          ]);
+             
+           $id = $request->kid;
+           $data['name'] = ucfirst($request->kname);
+ 
+           $update = DB::table('campuses')->where('id',$id)->update($data);
+           return redirect()->back()->with("status","Campus updated successfully");
+
+
+      }
 
 
 }

@@ -71,6 +71,8 @@ class TicketsController extends Controller
          $ticket_image_name = hexdec(uniqid()).'.'.$ticket_image->getClientOriginalExtension();
         Image::make($ticket_image)->resize(300,300)->save('img/'. $ticket_image_name);
         $image = 'img/'.$ticket_image_name;  
+
+        $wembley = 'doncho.borisov@lsst.ac';
         
          $ticket = new Ticket([
              'title' => $request->title,
@@ -88,7 +90,7 @@ class TicketsController extends Controller
 
 
 
-      
+        $mailer->sendAdminInformation(Auth::user(),$ticket);            
         $mailer->sendTicketInformation(Auth::user(),$ticket);
         return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
        
@@ -97,7 +99,8 @@ class TicketsController extends Controller
 
         }else{
        
-
+         
+        
          $ticket = new Ticket([
         
            'title' => $request->title,
@@ -113,7 +116,7 @@ class TicketsController extends Controller
         $ticket->save();
    
 
-
+        $mailer->sendAdminInformation(Auth::user(),$ticket);
         $mailer->sendTicketInformation(Auth::user(),$ticket);
         return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
        

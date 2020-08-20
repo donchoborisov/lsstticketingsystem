@@ -15,6 +15,8 @@
 </div>
 @else
 <div class="card-body">
+
+<div class="table-responsive">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -63,6 +65,7 @@
   
   </tbody>
 </table>
+<div class="table-responsive">
 <div
 
  {{$tickets->render()}}

@@ -146,6 +146,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'cname'=>'Category',
+        'kname'=>'Campus',
+    ],
 
 ];
