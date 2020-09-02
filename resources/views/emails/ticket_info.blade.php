@@ -19,7 +19,7 @@
 <p>Priority: <b>{{  ucfirst ($ticket->priority) }}</b></p>
 <p>Status: <b>{{  ucfirst($ticket->status) }}</b></p>
  
-@include('beautymail::templates.minty.button', ['text' => 'See ticket', 'link' => ' http://127.0.0.1:8000/tickets/'. $ticket->ticket_id])
+@include('beautymail::templates.minty.button', ['text' => 'See ticket', 'link' => 'http://ticket.lsst.ac/tickets/'. $ticket->ticket_id])
 
 @include('beautymail::templates.widgets.articleEnd')
 

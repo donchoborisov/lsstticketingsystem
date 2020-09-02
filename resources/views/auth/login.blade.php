@@ -6,6 +6,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @if (session('delete'))
+                        <div class="alert alert-danger text-center"><i class="fas fa-exclamation-circle"></i>
+                            {{ session('delete') }}
+                        </div>
+                    @endif
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -66,7 +71,7 @@
     </div>
     <div class="row justify-content-center mt-3">
                           
-        <img class="logo" src="{{asset('/img/logo.jpg')}}">
+        <img class="img-fluid" style="border-radius:40px; width:300px; height:100px;" src="{{asset('/img/logo.jpg')}}">
                      
        </div>    
 </div>

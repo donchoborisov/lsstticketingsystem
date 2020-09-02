@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Database\QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +51,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof QueryException) {
+
+            //do wathever you want, for example returining a specific view
+            return redirect()->route('login')->with('delete',"Something is wrong with your account, please contact it@lsst.ac");
+        }
         return parent::render($request, $exception);
     }
 }

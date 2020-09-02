@@ -18,6 +18,8 @@ class CreateCommentsTable extends Migration
             $table->integer('ticket_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->text('comment');
+            $table->text('campus');
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

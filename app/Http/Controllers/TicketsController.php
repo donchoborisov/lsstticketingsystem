@@ -61,7 +61,8 @@ class TicketsController extends Controller
 
 
         $ticket_image = $request->image;
-
+    
+        $idtitle = date("d-m-Y H:i:s");
         
         if($ticket_image){
        
@@ -77,7 +78,7 @@ class TicketsController extends Controller
          $ticket = new Ticket([
              'title' => $request->title,
              'user_id' => Auth::user()->id,
-            'ticket_id' => strtoupper(Str::random(10)),
+            'ticket_id' => $idtitle, //strtoupper(Str::random(10)),
              'category_id' => $request->category,
             'campus_id'=> $request->campus,
             'priority' => $request->priority,
@@ -105,7 +106,7 @@ class TicketsController extends Controller
         
            'title' => $request->title,
            'user_id' => Auth::user()->id,
-           'ticket_id' => strtoupper(Str::random(10)),
+           'ticket_id' => $idtitle, //strtoupper(Str::random(10)),
            'category_id' => $request->category,
            'campus_id'=> $request->campus,
            'priority' => $request->priority,

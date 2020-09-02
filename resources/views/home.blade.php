@@ -193,10 +193,10 @@ $(document).ready(function(){
     </tr>
        @endforeach
  
-       {{$category->render()}}
+    
   </tbody>
 </table>
-
+{{$category->render()}}
 
 </div>
 

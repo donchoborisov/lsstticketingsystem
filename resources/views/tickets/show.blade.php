@@ -30,13 +30,15 @@
               
 
              </p>
-
+            
              @if($ticket->image == NULL)
 
              @else
-             <img src="{{asset($ticket->image)}}" class="ticket">  
+             <div class="text-center">
+             <img class="" src="{{asset($ticket->image)}}" class="ticket"> 
+             </div> 
              @endif
-
+            
              <p>
                 @if($ticket->status == 'Open')
                   <b>Status:</b>  <span class="badge badge-success">{{$ticket->status}}</span>

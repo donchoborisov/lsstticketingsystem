@@ -49,7 +49,7 @@ class AppMailer
     
     public function sendAdminInformation($user, Ticket $ticket )
     {
-       $wembley = 'doncho.borisov@lsst.ac';
+       $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
        $elephant = 'maksud.rahman@lsst.ac';
        $luton = 'muhammad.faisal@lsst.ac';
        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
@@ -123,6 +123,86 @@ return $this->deliver();
 }
        
 }
+
+public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $comment)
+    {
+
+        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
+        $elephant = 'maksud.rahman@lsst.ac';
+        $luton = 'muhammad.faisal@lsst.ac';
+        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
+        $memo = 'fahim.hasan@lsst.ac';
+ 
+        if($comment->campus == 'Wembley'){
+            $this->to = $wembley;
+ 
+            $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
+     
+            $this->view = 'emails.ticket_comments';
+     
+            $this->data = compact('ticketOwner', 'user', 'ticket', 'comment');
+     
+            return $this->deliver(); 
+ 
+ 
+ 
+        } elseif ($comment->campus == 'Elephant & Castle')    {
+ 
+            $this->to = $elephant;
+ 
+            $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
+     
+            $this->view = 'emails.ticket_comments';
+     
+            $this->data = compact('ticketOwner', 'user', 'ticket', 'comment');
+     
+            return $this->deliver();  
+ }
+ 
+ elseif ($comment->campus == 'Luton') {
+ 
+    $this->to = $luton;
+ 
+        $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
+ 
+        $this->view = 'emails.ticket_comments';
+ 
+        $this->data = compact('ticketOwner', 'user', 'ticket', 'comment');
+ 
+        return $this->deliver();
+ 
+ }
+ 
+ elseif ($comment->campus == 'Aston'){
+    $this->to = $aston;
+ 
+    $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
+
+    $this->view = 'emails.ticket_comments';
+
+    $this->data = compact('ticketOwner', 'user', 'ticket', 'comment');
+
+    return $this->deliver(); 
+ 
+ }
+ elseif ($memo == 'Memo House')
+ {
+ 
+    $this->to = $ticketOwner->email;
+ 
+    $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
+
+    $this->view = 'emails.ticket_comments';
+
+    $this->data = compact('ticketOwner', 'user', 'ticket', 'comment');
+
+    return $this->deliver();
+ 
+ }
+
+
+    }
+ 
 
 
 

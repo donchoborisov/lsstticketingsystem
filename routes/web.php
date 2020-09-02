@@ -34,6 +34,7 @@ Route::get('tickets/{ticket_id}','TicketsController@show');
 
 //comment routes
 Route::post('comment','CommentsController@postComment');
+Route::get('/view/picture/{id}','CommentsController@ViewPicture'); 
 
 //admin routes
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
