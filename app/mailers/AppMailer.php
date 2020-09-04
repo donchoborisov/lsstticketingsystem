@@ -10,8 +10,8 @@ class AppMailer
 {
     protected $mailer;
  
-    protected $fromAddress ='';
-    protected $fromName = '';
+    protected $fromAddress ='testuser@lsst.ac';
+    protected $fromName = 'Support Ticket';
     protected $to;
     protected $subject;
     protected $view;
@@ -49,11 +49,11 @@ class AppMailer
     
     public function sendAdminInformation($user, Ticket $ticket )
     {
-       $wembley = ;
-       $elephant = ;
-       $luton = ;
-       $aston = ;
-       $memo = ;
+       $wembley = 'doncho.borisov@lsst.ac';
+       $elephant = 'maksud.rahman@lsst.ac';
+       $luton = 'muhammad.faisal@lsst.ac';
+       $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
+       $memo = 'fahim.hasan@lsst.ac';
 
        if($ticket->campus->name == 'Wembley'){
         $this->to = $wembley;
@@ -127,11 +127,11 @@ return $this->deliver();
 public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $comment)
     {
 
-        $wembley = ;
-        $elephant = ;
-        $luton = ;
-        $aston = ;
-        $memo = ;
+        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
+        $elephant = 'maksud.rahman@lsst.ac';
+        $luton = 'muhammad.faisal@lsst.ac';
+        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
+        $memo = 'fahim.hasan@lsst.ac';
  
         if($comment->campus == 'Wembley'){
             $this->to = $wembley;

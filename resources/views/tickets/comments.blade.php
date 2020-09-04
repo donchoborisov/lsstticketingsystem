@@ -1,5 +1,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!-- ajax script link-->
 <div class="comments">
+@include('notify::messages')
+    <x:notify-messages />
+    @notifyJs
      @if($ticket->comments->isEmpty())
      <p class="text-center">no comments for this ticket</p>
      @else

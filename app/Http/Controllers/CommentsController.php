@@ -76,9 +76,9 @@ class CommentsController extends Controller
 
 
 
-
-
-        return redirect()->back()->with('status', 'Your comment has been submitted');
+        notify()->success('Your comment has been submitted!');
+        
+        return redirect()->back(); //->with('status', 'Your comment has been submitted');
 
         } else{
 
@@ -101,8 +101,8 @@ class CommentsController extends Controller
             $mailer->sendTicketCommentsAdmin($comment->ticket->user, Auth::user(), $comment->ticket, $comment );
 
         }
-
-        return redirect()->back()->with('status', 'Your comment has been submitted');
+        notify()->success('Your comment has been submitted!');
+        return redirect()->back();  //->with('status', 'Your comment has been submitted');
 
     }
 

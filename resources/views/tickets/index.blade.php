@@ -2,9 +2,13 @@
 @section('title','All Tickets')
 
 @section('content')
-
+@include('notify::messages')
+    <x:notify-messages />
+    @notifyJs
 <div class="container">
+
 <div class="row justify-content-center">
+
 <div class="col-md-10">
 <div class="card">
 

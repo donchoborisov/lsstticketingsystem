@@ -4,7 +4,7 @@
 <form action="{{url('comment')}}" method="post" class="form" enctype="multipart/form-data">@csrf
 <input type="hidden" name="ticket_id" value="{{$ticket->id}}">
 <input type="hidden" name="campus" value="{{$ticket->campus->name}}">
-<div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}"><br>
                         <textarea rows="3" col="5" id="comment" class="form-control login text-center" placeholder="     comment here.." name="comment"></textarea>
           <div class="image-upload ml-5" >
           <label for="file-input">

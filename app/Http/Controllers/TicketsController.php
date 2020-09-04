@@ -119,6 +119,7 @@ class TicketsController extends Controller
 
         $mailer->sendAdminInformation(Auth::user(),$ticket);
         $mailer->sendTicketInformation(Auth::user(),$ticket);
+        
         return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
        
 
@@ -155,7 +156,8 @@ class TicketsController extends Controller
        $ticketOwner = $ticket->user;
        $mailer->sendTicketStatusNotification($ticketOwner,$ticket);
 
-       return redirect()->back()->with("status","The Ticket has been closed!");
+       notify()->info('The Ticket has been closed!');
+       return redirect()->back(); //->with("status","The Ticket has been closed!");
     }
 
     public function campustickets(Request $request){
