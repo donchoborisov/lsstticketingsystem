@@ -1,4 +1,5 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!-- ajax script link-->
+
 <div class="comments">
 @include('notify::messages')
     <x:notify-messages />
@@ -20,11 +21,11 @@
                 {{ $comment->comment }}
 
                
-             <div>  
+             <div id="comment">  
           @if($comment->image == NULL)
 
             @else
-          <a href="#"  id="{{$comment->id}}" onclick="viewpicture(this.id)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true" ><img  src="{{asset($comment->image)}}" class="comment"></a>  
+          <a href="#"  id="{{$comment->id}}" onclick="viewpicture(this.id)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true" ><img  src="{{asset($comment->image)}}" style="width:100px;margin-left:auto;margin-right:auto;" class="commentpicture"></a>  
           @endif
          </div>
             </div>
@@ -45,7 +46,7 @@
         </button>
       </div>
       <div class="modal-body text-center" >
-      <img id="pimage" src="">
+      <img id="pimage" style="margin-left:auto;margin-right:auto;" src="">
  
       </div>
       <div class="modal-footer">

@@ -74,8 +74,9 @@ line-height: 2.5;
 }
 
  .ticket{
-    width:690px;
+    width:400px;
     border-radius: 5%;
+ 
     
 }
 
@@ -114,7 +115,11 @@ line-height: 2.5;
     cursor: pointer;
     
 }
-.comment{
+.commentpicture{
     width: 100px;
     cursor: pointer;
-}
+    
+  
+   
+} 
+

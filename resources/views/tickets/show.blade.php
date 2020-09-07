@@ -34,8 +34,8 @@
              @if($ticket->image == NULL)
 
              @else
-             <div class="text-center">
-             <img class="" src="{{asset($ticket->image)}}" class="ticket"> 
+             <div  class="text-center">
+             <img  src="{{asset($ticket->image)}}" style="width:300px; margin-left: auto; margin-right: auto;" class="ticket"> 
              </div> 
              @endif
             

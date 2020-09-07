@@ -10,7 +10,7 @@ class AppMailer
 {
     protected $mailer;
  
-    protected $fromAddress ='testuser@lsst.ac';
+    protected $fromAddress ='lsst.ticket@lsst.ac';
     protected $fromName = 'Support Ticket';
     protected $to;
     protected $subject;
