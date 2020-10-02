@@ -174,26 +174,29 @@ class TicketsController extends Controller
        
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function assign(Request $request){
+       
+        
+        $this->validate($request,[
+            'campusassign'=>'required', 
+        ]);
+
+        $ticketid = $request->ticketid;
+
+        $campusid = $request->campusassign;
+
+ //dd($campusid);
+//dd($ticketid);
+        DB::table('tickets')->where('id',$ticketid)->update(['campus_id' => $campusid]);
+        notify()->info('The Ticket has been assigned!');
+        return redirect()->route('all.tickets');
+
+       
+
+       
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  
 }

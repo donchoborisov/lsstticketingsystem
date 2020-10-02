@@ -46,7 +46,7 @@
         </button>
       </div>
       <div class="modal-body text-center" >
-      <img id="pimage" style="margin-left:auto;margin-right:auto;" src="">
+      <img id="pimage" style="margin-left:auto;margin-right:auto;"  src="">
  
       </div>
       <div class="modal-footer">

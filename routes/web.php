@@ -39,7 +39,7 @@ Route::get('/view/picture/{id}','CommentsController@ViewPicture');
 //admin routes
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
            
-         Route::get('tickets','TicketsController@index');
+         Route::get('tickets','TicketsController@index')->name('all.tickets');
          Route::post('close_ticket/{ticket_id}','TicketsController@close');
          Route::post('new-campus','CampusController@create');
          Route::get('delete/campus/{id}','CampusController@delete');
@@ -50,6 +50,7 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
          Route::post('new-category','CategoryController@create');
          Route::get('edit/campus/{id}','CampusController@Edit');
          Route::post('update/campus','CampusController@campusupdate')->name('update.campus');
+         Route::post('/assign/ticket','TicketsController@assign');
 
 });
          

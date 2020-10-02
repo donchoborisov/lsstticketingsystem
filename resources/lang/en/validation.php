@@ -149,6 +149,7 @@ return [
     'attributes' => [
         'cname'=>'Category',
         'kname'=>'Campus',
+        'campusassign' => 'Assign',
     ],
 
 ];

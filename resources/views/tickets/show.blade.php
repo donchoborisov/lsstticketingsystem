@@ -49,7 +49,45 @@
              <p><b>Created by:</b> {{$ticket->user->name}}</p>
              <p><b>Campus:</b> {{$ticket->campus->name}}</p>
              <p><b>Created:</b> {{$ticket->created_at->diffForHumans()}}</p>
+
+@php
+$campus = $ticket->campus->name;
+$campuses = DB::table('campuses')->where('name','!=',$campus)->get();
+@endphp
+
+         
+             @if(Auth::user()->is_admin)
+             <form method="POST" action="{{url('admin/assign/ticket')}}">@csrf
+             <input type="hidden" name="ticketid" value="{{$ticket->id}}">
+             <select class="custom-select mr-sm-2" name="campusassign">
+                <option value="">Assign to...</option>
+                @foreach($campuses as $campus)
+                <option value="{{$campus->id}}">{{$campus->name}}</option>
+
+                @endforeach
+              </select>
+               <br>
+               <br>
+              <button class="btn btn-info">Assign</button>
+              </form> 
+              <div class="error">
+     @if ($errors->has('campusassign'))
+    <span class="error" style="color:#FF0000;">
+    <small><strong>{{ $errors->first('campusassign') }}</strong></small>
+    </span>
+    @endif
+</div>
+              @endif
+              
+
+      
+
             </div>
+     
+
+            
+
+
              
 
 

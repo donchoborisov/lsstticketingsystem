@@ -23,7 +23,7 @@ line-height: 2.5;
 
 .message {
     border:1px solid;
-    border-radius: 30px;
+    border-radius: 10px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color:	#DCDCDC;
     text-align: center;
@@ -33,7 +33,7 @@ line-height: 2.5;
 
 .message2 {
     border:1px solid;
-    border-radius: 30px;
+    border-radius: 10px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color:white;
     text-align: center;
@@ -123,3 +123,6 @@ line-height: 2.5;
    
 } 
 
+.faq {
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

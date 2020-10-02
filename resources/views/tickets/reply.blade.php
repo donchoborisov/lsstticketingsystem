@@ -8,10 +8,10 @@
                         <textarea rows="3" col="5" id="comment" class="form-control login text-center" placeholder="     comment here.." name="comment"></textarea>
           <div class="image-upload ml-5" >
           <label for="file-input">
-          <i class="far fa-image"></i>
+          <i class="far fa-image" title="Upload Picture" data-toggle="tooltip" data-placement="bottom"></i>
           </label>
 
-          <input id="file-input" name="image" type="file" onchange="readURL(this);" />
+          <input id="file-input"   name="image" type="file" onchange="readURL(this);" />
           
           </div>
           <img src="" id="comimg">
@@ -62,4 +62,9 @@
       reader.readAsDataURL(input.files[0]);
     }
   }
+</script>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
 </script>

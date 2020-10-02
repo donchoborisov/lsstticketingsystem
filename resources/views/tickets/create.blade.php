@@ -111,7 +111,9 @@
                             <label for="message" class="col-md-4 control-label"><b>Message</b></label>
  
                             <div class="col-md-8">
-                                <textarea rows="10" id="message" class="form-control" placeholder="Message.." name="message"></textarea>
+                                <textarea rows="10" id="message" class="form-control" placeholder="Message.." name="message" >
+                               {{ old('message') }} 
+                                </textarea>
  
                                 @if ($errors->has('message'))
                                 <span class="help-block" style="color:#FF0000;">

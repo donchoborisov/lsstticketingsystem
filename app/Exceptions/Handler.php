@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Database\QueryException;
+use Adldap\Auth\BindException;
 
 class Handler extends ExceptionHandler
 {
@@ -54,8 +55,13 @@ class Handler extends ExceptionHandler
         if ($exception instanceof QueryException) {
 
             //do wathever you want, for example returining a specific view
-            return redirect()->route('login')->with('delete',"Something is wrong with your account, please contact it@lsst.ac");
+            return redirect()->route('login')->with('delete',"Something is wrong with your account, Please contact it@lsst.ac");
         }
+
+        if($exception instanceof BindException ){
+            return redirect()->route('login')->with('delete',"Connection issue! Please contact it@lsst.ac ");
+        }
+
         return parent::render($request, $exception);
     }
 }
