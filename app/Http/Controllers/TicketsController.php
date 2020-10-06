@@ -174,9 +174,9 @@ class TicketsController extends Controller
        
     }
 
-    public function assign(Request $request){
+    public function assign(Request $request, AppMailer $mailer){
        
-        
+
         $this->validate($request,[
             'campusassign'=>'required', 
         ]);
@@ -187,9 +187,21 @@ class TicketsController extends Controller
 
  //dd($campusid);
 //dd($ticketid);
+
+      
+
+      
+       
+
         DB::table('tickets')->where('id',$ticketid)->update(['campus_id' => $campusid]);
+        
+        $ticket = Ticket::where('id',$ticketid)->first();
+
         notify()->info('The Ticket has been assigned!');
+        $mailer->sendAdminAssignInformation(Auth::user(),$ticket);
         return redirect()->route('all.tickets');
+
+        
 
        
 

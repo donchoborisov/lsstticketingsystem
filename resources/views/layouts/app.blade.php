@@ -73,6 +73,7 @@
                                      
                                      </a>
                                      <a class="dropdown-item" href="{{ url('/admin/tickets') }}"><i class="fa fa-ticket" aria-hidden="true"></i>  View All Tickets</a>
+                                     <a class="dropdown-item" href="{{ url('/new-ticket') }}"><i class="fa fa-window-restore" aria-hidden="true"></i> Create Ticket</a>
                                      
                                      <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

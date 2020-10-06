@@ -124,6 +124,103 @@ return $this->deliver();
        
 }
 
+
+
+
+public function sendAdminAssignInformation($user,Ticket $ticket )
+{
+   $wembley = 'doncho.borisov@lsst.ac';
+   $elephant = 'maksud.rahman@lsst.ac';
+   $luton = 'muhammad.faisal@lsst.ac';
+   $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
+   $memo = 'fahim.hasan@lsst.ac';
+
+   if($ticket->campus->name == 'Wembley'){
+    $this->to = $wembley;
+
+    $this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+    $this->view = 'emails.admin_assign_notification';
+
+    $this->data = compact('user', 'ticket');
+
+    return $this->deliver();  
+
+
+
+   } elseif ($ticket->campus->name == 'Elephant & Castle')    {
+
+    $this->to = $elephant;
+
+    $this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+    $this->view = 'emails.admin_assign_notification';
+
+    $this->data = compact('user', 'ticket');
+
+    return $this->deliver();  
+}
+
+elseif ($ticket->campus->name == 'Luton') {
+
+$this->to = $luton;
+
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view = 'emails.admin_assign_notification';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver();  
+
+}
+
+elseif ($ticket->campus->name == 'Aston'){
+$this->to = $aston;
+
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view = 'emails.admin_assign_notification';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver(); 
+
+}
+elseif ($ticket->campus->name == 'Memo House')
+{
+
+$this->to = $memo;
+
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view =  'emails.admin_assign_notification';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver();
+
+}
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $comment)
     {
 

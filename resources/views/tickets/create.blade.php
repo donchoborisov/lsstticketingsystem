@@ -3,11 +3,12 @@
 @section('title', 'Open Ticket')
  
 @section('content')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <div class="container">
     <div class="row justify-content-center" >
    
         <div class="col-md-8 ">
-            <div class="card">
+            <div class="card faq">
                 <div class="card-header"><b>Open New Ticket</b></div>
  
                 <div class="card-body">
@@ -19,14 +20,14 @@
                         </div>
                     @endif
  
-                    <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data">
-                        {!! csrf_field() !!}
+                    <form id="CreateForm" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data">@csrf
+                     
  
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label"><b>Title</b></label>
+                            <label for="title" class="col-md-4 control-label"><b>Ticket Title</b></label>
  
                             <div class="col-md-8">
-                                <input id="title" placeholder="Title" type="text" class="form-control" name="title" value="{{ old('title') }}">
+                                <input id="title" placeholder="Ticket Title" type="text" class="form-control" name="title" value="{{ old('title') }}">
  
                                 @if ($errors->has('title'))
                                 <span class="error" style="color:#FF0000;">
@@ -125,9 +126,10 @@
  
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" id="create" class="btn btn-danger">
                                     <i class="fa fa-btn fa-ticket"></i> Open Ticket
                                 </button>
+                              
                             </div>
                         </div>
                     </form>
@@ -152,4 +154,15 @@
     }
   }
 </script>
+<script type="text/javascript">
+   
+$('#CreateForm').submit(function(){
+    $("#create", this)
+      .html("Please Wait...")
+      .attr('disabled', 'disabled');
+    return true;
+});
+   
+</script>
+
 @endsection

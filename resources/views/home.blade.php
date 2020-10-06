@@ -23,7 +23,7 @@ $(document).ready(function(){
 
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card">
+            <div class="card faq">
                 @if(Auth::user()->is_admin)
                 <div class="card-header"><b>Admin Panel</b></div>
                 @else
@@ -49,7 +49,7 @@ $(document).ready(function(){
                  
                 <div class="row">
   <div class="col-3">
-    <div class="list-group" id="myTab" role="tablist">
+    <div class="list-group faq" id="myTab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list"  href="{{url('admin/tickets')}}" data-toggle="tooltip" data-placement="right"  title="Click to view all tickets" role="tab" aria-controls="home"><i class="fa fa-ticket" aria-hidden="true"></i> All Tickets</a>
       <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab" href="#list-profile"  role="tab" aria-controls="profile"><i class="fa fa-building-o" aria-hidden="true"></i> By Campus</a>
       <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="tab" href="#list-messages"   role="tab" aria-controls="messages"><i class="fa fa-plus-square" aria-hidden="true"></i> Campus</a>

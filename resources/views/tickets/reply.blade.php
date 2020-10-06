@@ -1,7 +1,8 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="panel panel-default">
 <div class="panel-body">
 <div class="comment-form">
-<form action="{{url('comment')}}" method="post" class="form" enctype="multipart/form-data">@csrf
+<form id="reply" action="{{url('comment')}}" method="post" class="form" enctype="multipart/form-data">@csrf
 <input type="hidden" name="ticket_id" value="{{$ticket->id}}">
 <input type="hidden" name="campus" value="{{$ticket->campus->name}}">
 <div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}"><br>
@@ -23,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="replysubmit" type="submit" class="btn btn-primary">Submit</button>
                     </div>
 
 
@@ -67,4 +68,13 @@
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
+</script>
+<script>
+$('#reply').submit(function(){
+    $("#replysubmit", this)
+      .html("Please Wait...")
+      .attr('disabled', 'disabled');
+    return true;
+});
+
 </script>

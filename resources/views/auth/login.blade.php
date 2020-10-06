@@ -11,7 +11,7 @@
                             {{ session('delete') }}
                         </div>
                     @endif
-            <div class="card">
+            <div class="card faq">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -85,7 +85,7 @@
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-         How to join online classes
+         How to join online classes <i class="fa fa-question-circle-o" aria-hidden="true"></i>
         </button>
       </h2>
     </div>

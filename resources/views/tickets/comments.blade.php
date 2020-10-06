@@ -16,7 +16,7 @@
                 <span class="pull-right">{{ $comment->created_at->diffForHumans()}}</span>
             </div>
  
-            <div class="message2">
+            <div class="message2 faq">
         
                 {{ $comment->comment }}
 
