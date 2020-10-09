@@ -126,3 +126,13 @@ line-height: 2.5;
 .faq {
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+.faq1 {
+    box-shadow:0.5px 0.5px 0.5px 0.5px rgba(218, 29, 29, 1), 0 6px 10px 0 rgba(231, 13, 13, 1);
+}
+
+
+.faq2 {
+    box-shadow:0.5px 0.5px 0.5px 0.5px rgb(50, 92, 228), 0 6px 10px 0 rgb(51, 79, 238);
+}

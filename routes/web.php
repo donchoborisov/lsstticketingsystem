@@ -32,9 +32,11 @@ Route::post('new-ticket','TicketsController@store');
 Route::get('my_tickets','TicketsController@userTickets');
 Route::get('tickets/{ticket_id}','TicketsController@show');
 
+
 //comment routes
 Route::post('comment','CommentsController@postComment');
-Route::get('/view/picture/{id}','CommentsController@ViewPicture'); 
+Route::get('/view/picture/{id}','CommentsController@ViewPicture');
+
 
 //admin routes
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
@@ -51,6 +53,7 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
          Route::get('edit/campus/{id}','CampusController@Edit');
          Route::post('update/campus','CampusController@campusupdate')->name('update.campus');
          Route::post('/assign/ticket','TicketsController@assign');
+         Route::get('/ticket/view/picture/{id}','TicketsController@ViewPicture');
 
 });
          

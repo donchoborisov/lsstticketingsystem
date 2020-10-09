@@ -15,8 +15,9 @@
  
                 <span class="pull-right">{{ $comment->created_at->diffForHumans()}}</span>
             </div>
- 
-            <div class="message2 faq">
+            
+            @if($comment->user == Auth::user())
+            <div class="message2 faq2">
         
                 {{ $comment->comment }}
 
@@ -29,6 +30,24 @@
           @endif
          </div>
             </div>
+            @else
+            <div class="message2 faq1">
+        
+        {{ $comment->comment }}
+
+       
+     <div id="comment">  
+  @if($comment->image == NULL)
+
+    @else
+  <a href="#"  id="{{$comment->id}}" onclick="viewpicture(this.id)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true" ><img  src="{{asset($comment->image)}}" style="width:100px;margin-left:auto;margin-right:auto;" class="commentpicture"></a>  
+  @endif
+ </div>
+    </div>
+
+
+
+          @endif
         </div>
     @endforeach
     

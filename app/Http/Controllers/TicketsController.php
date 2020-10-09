@@ -10,6 +10,7 @@ use App\Mailers\AppMailer;
 use Illuminate\Support\Str;
 use Image;
 use DB;
+use Response;
 
 class TicketsController extends Controller
 {
@@ -28,6 +29,24 @@ class TicketsController extends Controller
         $tickets = Ticket::orderBy('status','desc')->orderBy('updated_at','desc')->Simplepaginate(10);
         return view('tickets.index',compact('tickets'));
     }
+
+
+    public function ViewPicture($id){
+
+         $ticket = DB::table('tickets')->where('id',$id)->first();
+         $picture = asset($ticket->image);
+         return response::json([
+             'image'=> $picture
+
+         ]);
+
+
+
+
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.

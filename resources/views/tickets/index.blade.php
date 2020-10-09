@@ -5,8 +5,26 @@
 @include('notify::messages')
     <x:notify-messages />
     @notifyJs
-<div class="container">
 
+@php
+
+$open = DB::table('tickets')->where('status','Open')->count();
+$closed = DB::table('tickets')->where('status','Closed')->count();
+
+@endphp
+<div class="container">
+<div class="row justify-content-between">
+<button type="button" class="btn btn-success">
+  Open Tickets <span class="badge badge-light">{{$open}}</span>
+</button>
+
+<button type="button" class="btn btn-danger">
+  Closed Tickets <span class="badge badge-light">{{$closed}}</span>
+</button>
+
+
+
+</div><br>
 <div class="row justify-content-center">
 
 <div class="col-md-10">
