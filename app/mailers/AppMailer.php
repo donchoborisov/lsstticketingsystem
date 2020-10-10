@@ -49,7 +49,7 @@ class AppMailer
     
     public function sendAdminInformation($user, Ticket $ticket )
     {
-       $wembley = 'doncho.borisov@lsst.ac';
+        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
        $elephant = 'maksud.rahman@lsst.ac';
        $luton = 'muhammad.faisal@lsst.ac';
        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
@@ -129,7 +129,7 @@ return $this->deliver();
 
 public function sendAdminAssignInformation($user,Ticket $ticket )
 {
-   $wembley = 'doncho.borisov@lsst.ac';
+    $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
    $elephant = 'maksud.rahman@lsst.ac';
    $luton = 'muhammad.faisal@lsst.ac';
    $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];

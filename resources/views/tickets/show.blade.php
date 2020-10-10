@@ -118,7 +118,7 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
         </button>
       </div>
       <div class="modal-body text-center" >
-      <img id="pimage" style="cursor: pointer; margin-left:auto;margin-right:auto;"  src="">
+      <img id="pimage" style=" width: 100%; cursor: pointer; margin-left:auto;margin-right:auto;"  src="">
  
       </div>
       <div class="modal-footer">
