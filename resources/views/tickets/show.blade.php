@@ -36,7 +36,7 @@
 
              @else
              <div  class="text-center">
-             <img id="{{$ticket->id}}" onclick="viewpicture(this.id)"  data-toggle="modal" data-target="#exampleModal"  src="{{asset($ticket->image)}}" style="width:300px; margin-left: auto; margin-right: auto;" class="ticket"> 
+             <img id="{{$ticket->id}}" onclick="viewpicture(this.id)"  data-toggle="modal" data-target="#exampleModal1"  src="{{asset($ticket->image)}}"  class="ticket"> 
              </div> 
              @endif
             
@@ -108,7 +108,7 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
         </div>
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -118,7 +118,7 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
         </button>
       </div>
       <div class="modal-body text-center" >
-      <img id="pimage" style=" width: 100%; cursor: pointer; margin-left:auto;margin-right:auto;"  src="">
+      <img id="pimage"   src="">
  
       </div>
       <div class="modal-footer">
@@ -128,6 +128,9 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
     </div>
   </div>
 </div>
+
+
+
 
 <script type="text/javascript">
     function viewpicture(id){

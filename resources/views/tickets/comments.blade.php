@@ -16,7 +16,7 @@
                 <span class="pull-right">{{ $comment->created_at->diffForHumans()}}</span>
             </div>
             
-            @if($comment->user == Auth::user())
+              @if($comment->user == Auth::user())
             <div class="message2 faq2">
         
                 {{ $comment->comment }}
@@ -26,12 +26,16 @@
           @if($comment->image == NULL)
 
             @else
-          <a href="#"  id="{{$comment->id}}" onclick="viewpicture(this.id)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true" ><img  src="{{asset($comment->image)}}" style="width:100px;margin-left:auto;margin-right:auto;" class="commentpicture"></a>  
+          <a href="#"  id="{{$comment->id}}" onclick="viewcommentpicture(this.id)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true" ><img  src="{{asset($comment->image)}}" style="width:100px;margin-left:auto;margin-right:auto;" class="commentpicture"></a>  
           @endif
          </div>
             </div>
-            @else
-            <div class="message2 faq1">
+           
+           
+           
+           
+             @else  
+             <div class="message2 faq1">
         
         {{ $comment->comment }}
 
@@ -53,7 +57,7 @@
     
   
 
-    @endif
+     @endif  
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -65,7 +69,7 @@
         </button>
       </div>
       <div class="modal-body text-center" >
-      <img id="pimage" style="margin-left:auto;margin-right:auto;"  src="">
+      <img id="cimage" src="">
  
       </div>
       <div class="modal-footer">
@@ -76,17 +80,17 @@
   </div>
 </div>
 <script type="text/javascript">
-    function viewpicture(id){
+    function viewcommentpicture(id){
         $.ajax({
          url: "{{ url('/view/picture/') }}/"+id, 
          type: "GET",
          dataType:"json",
          success:function(data){
           
-        $('#pimage').attr('src', data.image);
+        $('#cimage').attr('src', data.image);
      
      }  
         })
     }
 
-</script>
+</script

@@ -89,7 +89,7 @@ class TicketsController extends Controller
        
        
          $ticket_image_name = hexdec(uniqid()).'.'.$ticket_image->getClientOriginalExtension();
-        Image::make($ticket_image)->resize(300,300)->save('img/'. $ticket_image_name);
+        Image::make($ticket_image)->resize(500,400)->save('img/'. $ticket_image_name);
         $image = 'img/'.$ticket_image_name;  
 
         $wembley = 'doncho.borisov@lsst.ac';
@@ -175,8 +175,11 @@ class TicketsController extends Controller
        $ticketOwner = $ticket->user;
        $mailer->sendTicketStatusNotification($ticketOwner,$ticket);
 
-       notify()->info('The Ticket has been closed!');
-       return redirect()->back(); //->with("status","The Ticket has been closed!");
+       $notification = array(
+        'message' => 'Ticket Closed!',
+        'alert-type' => 'warning'
+    );
+       return redirect()->back()->with($notification); //->with("status","The Ticket has been closed!");
     }
 
     public function campustickets(Request $request){
@@ -216,9 +219,12 @@ class TicketsController extends Controller
         
         $ticket = Ticket::where('id',$ticketid)->first();
 
-        notify()->info('The Ticket has been assigned!');
+        $notification = array(
+            'message' => 'Assigned!',
+            'alert-type' => 'success'
+        );
         $mailer->sendAdminAssignInformation(Auth::user(),$ticket);
-        return redirect()->route('all.tickets');
+        return redirect()->route('all.tickets')->with($notification);
 
         
 

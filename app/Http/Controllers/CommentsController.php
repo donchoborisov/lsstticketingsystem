@@ -49,7 +49,7 @@ class CommentsController extends Controller
          if($comment_image){  
 
             $comment_image_name = hexdec(uniqid()).'.'.$comment_image->getClientOriginalExtension();
-            Image::make($comment_image)->resize(300,300)->save('img/'. $comment_image_name);
+            Image::make($comment_image)->resize(500,400)->save('img/'. $comment_image_name);
             $image = 'img/'.$comment_image_name; 
             
             //dd($image);
@@ -76,9 +76,12 @@ class CommentsController extends Controller
 
 
 
-        notify()->success('Your comment has been submitted!');
+        $notification = array(
+            'message' => 'Your comment has been submitted!',
+            'alert-type' => 'success'
+        );
         
-        return redirect()->back(); //->with('status', 'Your comment has been submitted');
+        return redirect()->back()->with($notification);
 
         } else{
 
@@ -101,8 +104,11 @@ class CommentsController extends Controller
             $mailer->sendTicketCommentsAdmin($comment->ticket->user, Auth::user(), $comment->ticket, $comment );
 
         }
-        notify()->success('Your comment has been submitted!');
-        return redirect()->back();  //->with('status', 'Your comment has been submitted');
+        $notification = array(
+            'message' => 'Your comment has been submitted!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
 
     }
 

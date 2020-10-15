@@ -74,8 +74,10 @@ line-height: 2.5;
 }
 
  .ticket{
-    width:400px;
+    width:300px;
+    height:300px;
     border-radius: 5%;
+    cursor: pointer;
  
     
 }
@@ -135,4 +137,16 @@ line-height: 2.5;
 
 .faq2 {
     box-shadow:0.5px 0.5px 0.5px 0.5px rgb(50, 92, 228), 0 6px 10px 0 rgb(51, 79, 238);
+}
+
+#pimage{
+    width: 500px;
+    
+   
+}
+
+#cimage{
+    width: 300px;
+    
+   
 }

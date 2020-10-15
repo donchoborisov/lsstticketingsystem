@@ -6,6 +6,7 @@
     <x:notify-messages />
     @notifyJs
 
+    
 @php
 
 $open = DB::table('tickets')->where('status','Open')->count();
@@ -45,7 +46,7 @@ $closed = DB::table('tickets')->where('status','Closed')->count();
       <th scope="col">Title</th>
       <th scope="col">Priority</th>
       <th scope="col">Status</th>
-      <th scope="col">Last Updated</th>
+      <th scope="col">Updated</th>
       <th style="text-align:center" scope="col">Actions</th>
     </tr>
   </thead>
@@ -86,6 +87,8 @@ $closed = DB::table('tickets')->where('status','Closed')->count();
       </td>
       <td>
         @if($ticket->status == 'Open')
+       
+
         <form action="{{url('admin/close_ticket/'. $ticket->ticket_id)}}" method="POST">@csrf
         <a class="btn" href="{{url('tickets/' . $ticket->ticket_id)}}"  data-toggle="tooltip" data-placement="bottom"  title="Comment on this ticket" ><i class="fa fa-comment" id="comment"></i></a>
      
