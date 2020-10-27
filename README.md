@@ -1,20 +1,24 @@
 
 
 ## Laravel Ticketing System
-![image](https://user-images.githubusercontent.com/48497063/89775551-f75ffc80-daff-11ea-8985-7bf02f4eac35.png)
-![image](https://user-images.githubusercontent.com/48497063/89775837-8705ab00-db00-11ea-8b61-9112a9aa779d.png)
-![image](https://user-images.githubusercontent.com/48497063/89776328-90dbde00-db01-11ea-9cd1-1018d6c0e0ca.png)
-![image](https://user-images.githubusercontent.com/48497063/89776395-ba950500-db01-11ea-8d85-b8c434eed594.png)
+![image](https://user-images.githubusercontent.com/48497063/97360701-6e529900-1896-11eb-825e-b5b54477745f.png)
+![image](https://user-images.githubusercontent.com/48497063/97361103-fe90de00-1896-11eb-8a6c-26da3e107df7.png)
+![image](https://user-images.githubusercontent.com/48497063/97361167-149e9e80-1897-11eb-8f4b-3bf513bba4d3.png)
+![image](https://user-images.githubusercontent.com/48497063/97361231-27b16e80-1897-11eb-9dc7-2eb2d00af329.png)
+![image](https://user-images.githubusercontent.com/48497063/97361300-3ac43e80-1897-11eb-9015-247561f76efe.png)
+![image](https://user-images.githubusercontent.com/48497063/97361341-49125a80-1897-11eb-92b9-d388de9a1cb6.png)
+
+
 
 
 
 ## Description
 
 Ticketing system created with Laravel for the Higher Education Company.
-- Login with LDAP (Only AD users)
+- LDAP Authentication (Only AD users)
 - Admin Panel
 - Mail Notifications
 - Comments
 
-
+http://ticket.lsst.ac/
 
