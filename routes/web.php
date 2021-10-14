@@ -25,6 +25,9 @@ Auth::routes([
   ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/table', function(){
+      return view ('table'); 
+});
 
 //ticket routes
 Route::get('new-ticket','TicketsController@create')->name('create');

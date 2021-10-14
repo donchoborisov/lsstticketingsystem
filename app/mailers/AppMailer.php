@@ -51,9 +51,10 @@ class AppMailer
     {
         $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
        $elephant = 'maksud.rahman@lsst.ac';
-       $luton = 'muhammad.faisal@lsst.ac';
+       $luton = ['muhammad.faisal@lsst.ac','timayo.ogunro@lsst.ac'];
        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
        $memo = 'fahim.hasan@lsst.ac';
+       $digbeth = 'mihai.popa@lsst.ac';
 
        if($ticket->campus->name == 'Wembley'){
         $this->to = $wembley;
@@ -121,6 +122,20 @@ $this->data = compact('user', 'ticket');
 return $this->deliver();
 
 }
+elseif ($ticket->campus->name == 'Digbeth')
+{
+
+$this->to = $digbeth;
+ 
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view = 'emails.ticket_info';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver();
+
+}
        
 }
 
@@ -129,11 +144,12 @@ return $this->deliver();
 
 public function sendAdminAssignInformation($user,Ticket $ticket )
 {
-    $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
+    $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac','syed.shah@lsst.ac'];
    $elephant = 'maksud.rahman@lsst.ac';
-   $luton = 'muhammad.faisal@lsst.ac';
+   $luton = 'timayo.ogunro@lsst.ac';
    $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
-   $memo = 'fahim.hasan@lsst.ac';
+   $memo = ['fahim.hasan@lsst.ac','imran.termezy@lsst.ac'];
+   $digbeth = 'mihai.popa@lsst.ac';
 
    if($ticket->campus->name == 'Wembley'){
     $this->to = $wembley;
@@ -201,6 +217,20 @@ $this->data = compact('user', 'ticket');
 return $this->deliver();
 
 }
+elseif ($ticket->campus->name == 'Digbeth')
+{
+
+$this->to = $digbeth;
+ 
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view = 'emails.ticket_info';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver();
+
+}
    
 }
 
@@ -229,6 +259,7 @@ public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $co
         $luton = 'muhammad.faisal@lsst.ac';
         $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
         $memo = 'fahim.hasan@lsst.ac';
+        $digbeth = 'mihai.popa@lsst.ac';
  
         if($comment->campus == 'Wembley'){
             $this->to = $wembley;
@@ -296,6 +327,21 @@ public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $co
     return $this->deliver();
  
  }
+
+ elseif ($ticket->campus->name == 'Digbeth')
+{
+
+$this->to = $digbeth;
+ 
+$this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+
+$this->view = 'emails.ticket_info';
+
+$this->data = compact('user', 'ticket');
+
+return $this->deliver();
+
+}
 
 
     }

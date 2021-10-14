@@ -108,8 +108,9 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
         </div>
     </div>
 </div>
-<div class="modal fade bd-example-modal-lg" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg  modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -117,17 +118,17 @@ $campuses = DB::table('campuses')->where('name','!=',$campus)->get();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center" >
+      <div class="modal-body text-center">
       <img id="pimage"   src="">
- 
       </div>
       <div class="modal-footer">
-      
-      
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
       </div>
     </div>
   </div>
 </div>
+
 
 
 
