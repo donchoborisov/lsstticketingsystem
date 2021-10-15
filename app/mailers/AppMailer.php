@@ -49,11 +49,11 @@ class AppMailer
     
     public function sendAdminInformation($user, Ticket $ticket )
     {
-        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
+       $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac', 'amine.lallali@lsst.ac', 'syed.shah@lsst.ac'];
        $elephant = 'maksud.rahman@lsst.ac';
        $luton = ['muhammad.faisal@lsst.ac','timayo.ogunro@lsst.ac'];
        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
-       $memo = 'fahim.hasan@lsst.ac';
+       $memo = ['hichem.atoui@lsst.ac','imran.termezy@lsst.ac'];
        $digbeth = 'mihai.popa@lsst.ac';
 
        if($ticket->campus->name == 'Wembley'){
@@ -135,12 +135,8 @@ $this->data = compact('user', 'ticket');
 
 return $this->deliver();
 
+}       
 }
-       
-}
-
-
-
 
 public function sendAdminAssignInformation($user,Ticket $ticket )
 {
@@ -236,29 +232,14 @@ return $this->deliver();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public function sendTicketCommentsAdmin($ticketOwner, $user, Ticket $ticket, $comment)
     {
 
-        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac'];
+        $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac','amine.lallai@lsst.ac'];
         $elephant = 'maksud.rahman@lsst.ac';
         $luton = 'muhammad.faisal@lsst.ac';
         $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
-        $memo = 'fahim.hasan@lsst.ac';
+        $memo = 'hichem.atoui@lsst.ac';
         $digbeth = 'mihai.popa@lsst.ac';
  
         if($comment->campus == 'Wembley'){
@@ -345,9 +326,6 @@ return $this->deliver();
 
 
     }
- 
-
-
 
  
     public function sendTicketComments($ticketOwner, $user, Ticket $ticket, $comment)
@@ -385,28 +363,4 @@ return $this->deliver();
 
 }
 
-
-
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
