@@ -58,6 +58,21 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
          Route::post('/assign/ticket','TicketsController@assign');
          Route::get('/ticket/view/picture/{id}','TicketsController@ViewPicture');
 
+
+
+
+
 });
+
+
+//super admin
+
+Route::group(['middleware'=>'superadmin'],function(){
+
+Route::get('user/admin', 'AdminController@index')->name('user.admin.index');
+Route::get('users/search', 'AdminController@search' )->name('users.search');
+Route::get('user/edit/{id}','AdminController@edit')->name('user.edit');
+Route::post('user/assign/role/{id}','AdminController@role')->name('user.assign');
          
 
+});

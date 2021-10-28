@@ -71,7 +71,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                     @if(Auth::user()->is_admin) 
+                                     @if(Auth::user()->is_admin == '1') 
                                      <a class="dropdown-item" href="{{ url('/home') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                                      
                                      </a>
@@ -88,6 +88,30 @@
                                         @csrf
                                     </form>
                                       
+                                     @elseif(Auth::user()->is_admin == '2')
+
+                                     <a class="dropdown-item" href="{{ url('/home') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                                     
+                                     </a>
+                                     <a class="dropdown-item" href="{{ url('/admin/tickets') }}"><i class="fa fa-ticket" aria-hidden="true"></i>  View All Tickets</a>
+                                     <a class="dropdown-item" href="{{ url('/new-ticket') }}"><i class="fa fa-window-restore" aria-hidden="true"></i> Create Ticket</a>
+                                     <a class="dropdown-item" href="{{ url('user/admin') }}"><i class="fas fa-user-tag"></i> Users Roles</a>
+                                     
+                                     <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        {{ __('Logout') }}
+                                    </a>
+                                    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>   
+
+
+
+
+
+
                                      @else
                                      <a class="dropdown-item" href="{{ url('/home') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                                      

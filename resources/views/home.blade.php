@@ -24,7 +24,7 @@ $(document).ready(function(){
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card faq">
-                @if(Auth::user()->is_admin)
+                @if(Auth::user()->is_admin == '1' || Auth::user()->is_admin == '2' )
                 <div class="card-header"><b>Admin Panel</b></div>
                 @else
                 <div class="card-header"><b>Dashboard</b></div>
@@ -43,11 +43,7 @@ $(document).ready(function(){
                         </div>
                     @endif
 
-                    
-
-
-
-                @if(Auth::user()->is_admin)
+ @if(Auth::user()->is_admin == '1' || Auth::user()->is_admin == '2' )
                  
                 <div class="row">
   <div class="col-3">
@@ -93,6 +89,9 @@ $(document).ready(function(){
 
 
       </div>
+
+
+      
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
       <form class="form-inline mt-2" method="post" action="{{url('/admin/new-campus')}}">@csrf
 
@@ -105,6 +104,8 @@ $(document).ready(function(){
                          
                       
 </div>
+
+
 <button type="submit" class="btn btn-outline-secondary  btn-sm mb-2">Add Campus</button> 
                                
                             

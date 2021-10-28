@@ -49,7 +49,7 @@ class AppMailer
     
     public function sendAdminInformation($user, Ticket $ticket )
     {
-       $wembley = ['doncho.borisov@lsst.ac','waliul.islam@lsst.ac', 'amine.lallali@lsst.ac', 'syed.shah@lsst.ac'];
+       $wembley = ['doncho.borisov@lsst.ac'];
        $elephant = 'maksud.rahman@lsst.ac';
        $luton = ['muhammad.faisal@lsst.ac','timayo.ogunro@lsst.ac'];
        $aston = ['ahmed.kashif@lsst.ac','roland.iuga@lsst.ac'];
